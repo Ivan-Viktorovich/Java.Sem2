@@ -8,22 +8,20 @@
 public class task1 {
     public static void main(String[] args) {
         String stroka = "name:Ivanov ,country:Russia ,city:Moscow ,age:null";
+        String stroka2 = "select * from students WHERE ";
+        System.out.print(stroka2);
         String[] phrase = stroka.split(",");
-                for (String i : phrase) {
-                    if (i.contains("null")) {
-                        i = i.replace(i,"");
-                    }
+            for (String i : phrase) {
+                if (i.contains("null")) {
+                    i = i.replace(i,"");
+                }
         StringBuilder s = new StringBuilder();
             if (i != "") {
-                s.append(i);
-                if (i.contains(" ")) {
-                    i = i.replace(i,"AND ");
-                    s.append(i);
-                    s.toString();
-                }
+                s.append("AND ").append(i);
             }
-        System.out.print("select * from students WHERE ");
-        System.out.print(s);
+            System.out.print(s);
+            
+        
     }
 }
 }
